@@ -1,7 +1,7 @@
             - الاسم: Alpine Build APK
   # يمكنك التثبيت على الالتزام الدقيق أو الإصدار.
   # الاستخدامات: KalleDK/actions-abuild@5c123fe3aed1505507d0a5ef5632725b365dbf70
-  الاستخدامات: KalleDK/actions-abuild@v0.0.1
+ # الاستخدامات: KalleDK/actions-abuild@v0.0.1
   مع:
     # المجلد APKBUILD موجود في
     abuild_prefix: # اختياري
