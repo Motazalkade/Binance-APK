@@ -1,0 +1,27 @@
+name: Android build (Buildozer in Docker)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildozer and build
+        uses: addnab/docker-run-action@v3
+        with:
+          image: "tuomasr/buildozer:latest"
+          options: --privileged
+          run: |
+            mkdir -p /work
+            cp -r . /work/
+            cd /work
+            buildozer android debug
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-apk
+          path: bin/*.apk
